@@ -1,0 +1,1050 @@
+/* Variabel CSS untuk tema */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode {
+    --primary-color: #34495e;
+    --secondary-color: #2980b9;
+    --accent-color: #c0392b;
+    --text-color: #ecf0f1;
+    --bg-color: #2c3e50;
+    --card-bg: #34495e;
+    --border-color: #4a6278;
+    --shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Reset dan base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+    background: var(--accent-color);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.restaurant-info h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.restaurant-info p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    background: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.nav-item {
+    flex: 1;
+    padding: 1rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.nav-item.active {
+    background: var(--secondary-color);
+    color: white;
+    border-bottom-color: var(--accent-color);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+/* Menu Form */
+.menu-form {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.form-section h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-item input[type="checkbox"],
+.checkbox-item input[type="radio"] {
+    width: auto;
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn-pesan,
+.btn-bayar {
+    background: linear-gradient(135deg, var(--accent-color), #d63031);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.btn-pesan:hover,
+.btn-bayar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn-pesan:disabled,
+.btn-bayar:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+#tabel-pesanan {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+}
+
+#tabel-pesanan th {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 10px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+#tabel-pesanan td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+#tabel-pesanan tbody tr:hover {
+    background: rgba(52, 152, 219, 0.05);
+}
+
+.btn-hapus {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-hapus:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Summary Section */
+.summary-section {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.total-section,
+.tax-section,
+.final-total-section,
+.change-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.final-total-section {
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.total-label,
+.tax-label,
+.final-total-label,
+.change-label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.total-box {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+/* Payment Method */
+.payment-method {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.payment-input {
+    display: none;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #2ecc71;
+}
+
+.payment-input.active {
+    display: block;
+}
+
+.change-section {
+    display: none;
+}
+
+.change-section.active {
+    display: flex;
+}
+
+/* Empty Table Message */
+.empty-table-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-color);
+    font-style: italic;
+    background: var(--bg-color);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Notifikasi Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-left: 5px solid #3498db;
+    z-index: 10000;
+    transform: translateX(400px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    max-width: 450px;
+    min-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    font-family: inherit;
+}
+
+.notification.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.notification-success {
+    border-left-color: #27ae60;
+    background: linear-gradient(135deg, #d5f4e6, #c8f7dc);
+    color: #155724;
+    border: 1px solid #27ae60;
+}
+
+.notification-error {
+    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border: 1px solid #e74c3c;
+}
+
+.notification-warning {
+    border-left-color: #f39c12;
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+    border: 1px solid #f39c12;
+}
+
+.notification-info {
+    border-left-color: #3498db;
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+    border: 1px solid #3498db;
+}
+
+.notification-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    flex: 1;
+}
+
+.notification-content i {
+    font-size: 1.4rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.notification-message {
+    flex: 1;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.notification-close {
+    background: rgba(0,0,0,0.1);
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-close:hover {
+    background: rgba(0,0,0,0.2);
+    transform: scale(1.1);
+}
+
+/* Perbaikan untuk payment input */
+.payment-input {
+    display: none;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    border-left: 4px solid #2ecc71;
+}
+
+.payment-input.active {
+    display: block;
+}
+
+.change-section {
+    display: none;
+    background: rgba(46, 204, 113, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #2ecc71;
+}
+
+.change-section.active {
+    display: flex;
+}
+
+/* Pastikan display flex untuk section total */
+.total-section,
+.tax-section,
+.final-total-section,
+.change-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.final-total-section {
+    border-bottom: 2px solid var(--secondary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(52, 152, 219, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Tombol Bayar */
+.btn-bayar {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-bayar:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+    background: linear-gradient(135deg, #229954, #27ae60);
+}
+
+.btn-bayar:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+/* Payment Method Styles */
+.payment-method {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.payment-method .tax-label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    display: block;
+}
+
+.payment-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.payment-option {
+    flex: 1;
+    min-width: 120px;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: var(--bg-color);
+}
+
+.payment-option label i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.payment-option label span {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.payment-option input[type="radio"]:checked + label {
+    border-color: var(--secondary-color);
+    background: rgba(52, 152, 219, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.payment-option input[type="radio"]:checked + label i {
+    color: var(--secondary-color);
+}
+
+.payment-option label:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Payment Input Styles */
+.payment-input {
+    display: none;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(46, 204, 113, 0.05);
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    border-left: 4px solid #2ecc71;
+}
+
+.payment-input.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.payment-input .form-group {
+    margin-bottom: 0;
+}
+
+.payment-input label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.payment-input input {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Change Section */
+.change-section {
+    display: none;
+    background: rgba(46, 204, 113, 0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #2ecc71;
+    animation: slideDown 0.3s ease;
+}
+
+.change-section.active {
+    display: flex;
+}
+
+.change-section .change-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Button Bayar */
+.btn-bayar {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-bayar:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+    background: linear-gradient(135deg, #229954, #27ae60);
+}
+
+.btn-bayar:active:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.btn-bayar:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+/* Riwayat Pesanan Styles */
+.riwayat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.riwayat-header h2 {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-clear {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-clear:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.pesanan-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.pesanan-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.pesanan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pesanan-id {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.pesanan-tanggal {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.pesanan-items {
+    margin-bottom: 1rem;
+}
+
+.pesanan-item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.pesanan-item-details {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.pesanan-item-detail {
+    background: rgba(52, 152, 219, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.pesanan-item-total {
+    font-weight: bold;
+    color: var(--accent-color);
+    min-width: 100px;
+    text-align: right;
+}
+
+.pesanan-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.8rem;
+    border-top: 2px solid var(--secondary-color);
+}
+
+.pesanan-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.pesanan-metode {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-color);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.empty-state p {
+    opacity: 0.7;
+}
+
+/* Responsive Riwayat */
+@media (max-width: 768px) {
+    .riwayat-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .pesanan-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .pesanan-item-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .pesanan-item-total {
+        text-align: left;
+        min-width: auto;
+    }
+    
+    .pesanan-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Responsive Payment */
+@media (max-width: 768px) {
+    .payment-options {
+        flex-direction: column;
+    }
+    
+    .payment-option label {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 1rem;
+    }
+    
+    .payment-option label i {
+        margin-bottom: 0;
+    }
+}
+
+/* Responsive Design untuk Notifikasi */
+@media (max-width: 768px) {
+    .notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+        transform: translateY(-100px);
+    }
+    
+    .notification.show {
+        transform: translateY(0);
+    }
+    
+    .notification-message {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .restaurant-info h1 {
+        font-size: 2rem;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+    
+    .filters {
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
+    
+    .table-container {
+        font-size: 0.8rem;
+    }
+    
+    #tabel-pesanan th,
+    #tabel-pesanan td {
+        padding: 8px 5px;
+    }
+    
+    .btn-hapus {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .form-section {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .menu-form {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .restaurant-info p {
+        font-size: 1rem;
+    }
+    
+    .theme-btn {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+    
+    .btn-pesan,
+    .btn-bayar {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
